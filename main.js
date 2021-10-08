@@ -1,41 +1,41 @@
 document.addEventListener("DOMContentLoaded", () => {
     const body = document.querySelector('body');
 
-    let x = -1; 
+    let index = 0;
     const images = [];
     images[0] = "assets/stage1.jpg"
     images[1] = "assets/stage2.jpg"
     images[2] = "assets/stage3.jpg"
     images[3] = "assets/stage4.jpg"
 
-    function plantDying () {
-        x = (x === images.length - 1) ? 0 : x + 1;
-        document.getElementById('img').src = images[x];
-        const crunch = document.getElementById('crunch');
-        crunch.play()
 
-        if (x === 3){
-            const gameover = document.getElementById('gameover');
-            gameover.play();
-            alert('You let your plant die!');
-            return; 
+    function plantDying() {
+        if (index === 3){
+            const gameover = document.getElementById('crunch');
+            gameover.play(); 
+            alert('Your plant died!');
+            return;
+        } else {
+            index++; 
+            document.getElementById("img").src = images[index]; 
+            const crunch = document.getElementById('crunch');
+            crunch.play(); 
         }
-
     }
 
     function plantHealing () {
-        x = (x <= 0) ? images.length -1 : x - 1;
-        document.getElementById('img').src = images[x];
-        const water = document.getElementById('water'); 
-        water.play(); 
+        //iterate
+        //water 
+        //clear settimeout
+        if (index > 1){
+            index--; 
+            document.getElementById("img").src = images[index]; 
+            const water = document.getElementById('water'); 
+            water.play(); 
+        }
+
+        
     }
-
-    function startTime () {
-        setInterval(plantDying, 4000);
-    }
-
-    //startTime(); 
-
 
 
 
@@ -90,11 +90,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     }
 
+    function startTime () {
+        setInterval(plantDying, 4000);
+    }
 
-    document.getElementById("start").onclick = startTime (); 
+    document.getElementById("start").onclick = startTime; 
 
  
 
+function collision (){
+    // if water 
+    
+}
+// if the watering pixels match the image pixels then stop the set 
+//timeout and envoke plant healing
 
 
 
