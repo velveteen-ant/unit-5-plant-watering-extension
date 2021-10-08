@@ -44,4 +44,9 @@
       bottom: 0px; 
       right: 0px; 
       border-radius: 2px;
+      
+  }
+
+  #reload:focus {
+      background-color: lightskyblue;
   }
