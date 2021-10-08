@@ -1,0 +1,32 @@
+#body {
+    background-color: white;
+}
+
+/*#board {
+    height: 500px; 
+    width: 500px; 
+    border: 15px lightsalmon;
+    position: relative; 
+    background-color: white;
+}
+*/
+
+
+#mydiv {
+    position: absolute;
+    z-index: 9;
+    text-align: center;
+  }
+  
+  #mydivheader {
+    cursor: move;
+    z-index: 10;
+    height: 100px; 
+    width: 100px; 
+  }
+
+  #img {
+      height: 100px; 
+      width: 100px; 
+  }
+
