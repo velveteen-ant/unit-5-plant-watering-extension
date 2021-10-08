@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setInterval(plantDying, 4000);
     }
 
-    startTime(); 
+    //startTime(); 
 
 
 
@@ -89,6 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.onmousemove = null;
     }
     }
+
+
+    document.getElementById("start").onclick = startTime (); 
 
  
 
