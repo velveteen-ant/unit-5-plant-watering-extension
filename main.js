@@ -11,11 +11,23 @@ document.addEventListener("DOMContentLoaded", () => {
     function plantDying () {
         x = (x === images.length - 1) ? 0 : x + 1;
         document.getElementById('img').src = images[x];
+        const crunch = document.getElementById('crunch');
+        crunch.play()
+
+        if (x === 3){
+            const gameover = document.getElementById('gameover');
+            gameover.play();
+            alert('You let your plant die!');
+            return; 
+        }
+
     }
 
     function plantHealing () {
         x = (x <= 0) ? images.length -1 : x - 1;
         document.getElementById('img').src = images[x];
+        const water = document.getElementById('water'); 
+        water.play(); 
     }
 
     function startTime () {
@@ -62,11 +74,13 @@ document.addEventListener("DOMContentLoaded", () => {
         elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
         elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
         //check if watering can collides with plant 
+        //check here if watering can is at same position as plant
+        //if watering can is at same position as plant, invoke planthealing() and play audio of water
         console.log(elmt.style.top); 
-        if (elmnt.style.top === "0px" && elmnt.style.left === "0px"){
-            let audio = new Audio ('assets/water.mp3'); 
-            audio.play(); 
-        }
+        // if (elmnt.style.top === "0px" && elmnt.style.left === "0px"){
+            //invoke healing funciton 
+
+        // }
     }
 
     function closeDragElement() {
