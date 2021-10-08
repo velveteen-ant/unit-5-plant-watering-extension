@@ -4,18 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Plant Baby</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body onload= "startTime()"><img id='img' src="assets/stage1.jpg"/>
-
-  <div id="mydiv">
-    <img src="assets/wateringcan.jpg" alt="drag and drop" id="mydivheader">
-  </div>
-
   <script src="main.js"></script>
+  <link rel="stylesheet" href="style.css">
   <audio id ="water">
-      <source src="assets/water.mp3"/>
+    <source src="assets/water.mp3"/>
   </audio>
   <audio id ="crunch">
       <source src="assets/crunch.mp3"/>
@@ -23,10 +15,28 @@
   <audio id ="gameover">
       <source src="assets/gameover.mp3"/>
   </audio>
-  <div class ="cursor"></div>
+</head>
+
+<!--<body onload= "startTime()"><img id='img' src="assets/stage1.jpg"/>-->
+
+  <body onload="startTime()">
+
+    <div id="img">
+      <img src="assets/stage1.jpg" alt="plant" id="img">
+    </div>
+  
+    <div id="mydiv">
+      <img src="assets/wateringcan.jpg" alt="drag and drop" id="mydivheader">
+    </div>
+  
+    <div class ="cursor"></div>
+
+    <button onclick="window.location.reload()">Try another plant</button>
+
+
+
+  </body>
   
 
-
-</body>
 
 </html>
