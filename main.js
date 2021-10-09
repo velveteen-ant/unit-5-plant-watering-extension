@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function plantDying() {
         if (index === 3){
-            const gameover = document.getElementById('crunch');
+            const gameover = document.getElementById('gameover');
             gameover.play(); 
             alert('Your plant died!');
             return;
@@ -23,20 +23,21 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function plantHealing () {
-        //iterate
-        //water 
-        //clear settimeout
-        if (index > 1){
-            index--; 
-            document.getElementById("img").src = images[index]; 
-            const water = document.getElementById('water'); 
-            water.play(); 
-        }
-
-        
-    }
-
+    // function plantHealing () {
+    //     if (index > 1){
+    //         index--;
+    //         document.getElementById("img").src = images[index];
+    //         const water = document.getElementById('water'); 
+    //         water.play(); 
+    //     }
+    //     // let plant;
+    //     // if (index > 1){
+    //     //     index--; 
+    //     //     plant = document.getElementById("img").src = images[index]; 
+    //     //     const water = document.getElementById('water'); 
+    //     //     water.play(); 
+    //     // }  
+    // }
 
 
     dragElement(document.getElementById("mydiv"));
@@ -71,16 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
         pos3 = e.clientX;
         pos4 = e.clientY;
         // set the element's new position:
+
         elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
         elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-        //check if watering can collides with plant 
-        //check here if watering can is at same position as plant
-        //if watering can is at same position as plant, invoke planthealing() and play audio of water
-        console.log(elmt.style.top); 
-        // if (elmnt.style.top === "0px" && elmnt.style.left === "0px"){
-            //invoke healing funciton 
-
-        // }
     }
 
     function closeDragElement() {
@@ -96,19 +90,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("start").onclick = startTime; 
 
- 
+    // function plantHealing () {
+    //     if (index > 1){
+    //         index--;
+    //         document.getElementById("img").src = images[index];
+    //         const water = document.getElementById('water'); 
+    //         water.play(); 
+    //         //startTime();
+    //     }
+    // }
 
-function collision (){
-    // if water 
+    document.getElementById("img").addEventListener('click', function () {
+        if (index >= 1){
+            index--;
+            document.getElementById("img").src = images[index];
+            const water = document.getElementById('water'); 
+            water.play(); 
+            clearInterval(startTime);
+        }
+    });
+
+ 
+// function collision (){
+//     // if water 
     
-}
+// }
 // if the watering pixels match the image pixels then stop the set 
 //timeout and envoke plant healing
-
-
-
-
-
 
 
 
